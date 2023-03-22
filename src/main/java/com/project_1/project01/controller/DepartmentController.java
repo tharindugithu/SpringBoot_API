@@ -1,6 +1,5 @@
 package com.project_1.project01.controller;
 
-import com.project_1.project01.Test;
 import com.project_1.project01.entity.Department;
 import com.project_1.project01.error.DepartmentNotFoundException;
 import com.project_1.project01.service.DepartmentService;
@@ -18,9 +17,6 @@ public class DepartmentController {
     @Autowired
     private DepartmentService departmentService;
 
-    @Autowired
-    public Test test;
-
     private final Logger LOGGER = LoggerFactory.getLogger(DepartmentController.class);
 
     @PostMapping("/deps")
@@ -31,7 +27,7 @@ public class DepartmentController {
 
     @GetMapping("/deps")
     public List<Department> fetchAllDeps(){
-        test.printName();
+
         return departmentService.fetchAllDeps();
     }
 
